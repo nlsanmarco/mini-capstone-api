@@ -1,7 +1,2 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+product1 = Product.new(name: "Tug toy", price: 10.99, image_url: "www.petco.com/shop/en/petcostore/product/petique-bubbles-the-penguin-pet-toy", description: "Petique Bubbles the Penguin Pet Toy, Small")
+product2 = Product.new(name: "Soccer ball", price: 18.99, image_url: "https://www.petco.com/shop/en/petcostore/product/leaps-and-bounds-splash-and-dash-soccer-ball-dog-toy", description: "Leaps & Bounds Splash & Dash Soccer Ball Dog Toy, Medium")
