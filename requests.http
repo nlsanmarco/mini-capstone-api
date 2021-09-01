@@ -1,0 +1,28 @@
+GET http://localhost:3000/products
+
+###
+
+GET http://localhost:3000/products/2
+
+###
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "water bowl",
+  "price": 12,
+  "image_url": "https://m.media-amazon.com/images/I/61mBXZiwiwL.jpg",
+  "description": "water bowl"
+}
+
+###
+
+PATCH http://localhost:3000/products/2
+Content-Type: application/json
+
+{
+  "price": 3
+}
+
+###
+DELETE http://localhost:3000/products/5
