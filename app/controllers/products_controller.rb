@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
     product.description = params[:description] || product.description
     product.inventory = params[:inventory] || product.inventory
     product.save
-    render json: product.as_json
+    render json: product
   end
 
   def delete

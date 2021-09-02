@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  belongs_to :supplier
+
   def is_discounted?
     if price < 10
       true
