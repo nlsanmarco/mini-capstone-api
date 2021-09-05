@@ -1,12 +1,12 @@
 class SuppliersController < ApplicationController
   def index
-    suppliers - Supplier.all
-    render json: supplier.as_json
+    suppliers = Supplier.all
+    render json: suppliers
   end
 
   def show
     supplier = Supplier.find(params[:id])
-    render json: supplier.as_json
+    render json: supplier
   end
 
   def create
@@ -16,7 +16,12 @@ class SuppliersController < ApplicationController
       phone_number: params[:phone_number],
     )
     supplier.save
-    render json: supplier.as_json
+    if supplier.save
+      render json: supplier
+    else
+      render json: supplier.errors.full_messages,
+             tatus: :unprocessable_entity
+    end
   end
 
   def update
@@ -25,7 +30,12 @@ class SuppliersController < ApplicationController
     supplier.email = params[:email] || supplier.email
     supplier.phone_number = params[:phone_number] || supplier.phone_number
     supplier.save
-    render json: supplier.as_json
+    if supplier.save
+      render json: supplier
+    else
+      render json: supplier.errors.full_messages,
+      status: :unprocessable_entity
+    end
   end
 
   def delete

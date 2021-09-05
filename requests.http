@@ -1,28 +1,65 @@
 GET http://localhost:3000/products
-
 ###
-
 GET http://localhost:3000/products/2
-
 ###
 POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "name": "water bowl",
-  "price": 12,
-  "image_url": "https://m.media-amazon.com/images/I/61mBXZiwiwL.jpg",
-  "description": "water bowl"
+  "name": "",
+  "price": 10000,
+  "description": "water",
+  "inventory": 1,
+  "supplier_id": 2
 }
 
 ###
-
 PATCH http://localhost:3000/products/2
 Content-Type: application/json
 
 {
-  "price": 3
+  "supplier_id": 
 }
-
 ###
 DELETE http://localhost:3000/products/5
+###
+
+
+GET http://localhost:3000/suppliers
+###
+GET http://localhost:3000/suppliers/1
+###
+POST http://localhost:3000/suppliers
+Content-Type: application/json
+
+{
+  "name": "",
+  "email": "",
+  "phone_number": ""
+}
+###
+PATCH http://localhost:3000/suppliers/1
+Content-Type: application/json
+
+{
+  "phone_number": ""
+}
+###
+DELETE http://localhost:3000/suppliers/2
+###
+POST http://localhost:3000/images
+Content-Type: application/json
+
+{
+  "url": "https://9ed48207422fa7fc5013-a6297eb5ec0f30e883355c8680f3b2d6.ssl.cf2.rackcdn.com/RSG11%20(2)-20180815220434-20180815220922-1600x1075.jpg",
+  "product_id": 4
+}
+###
+PATCH http://localhost:3000/images/4
+Content-Type: application/json
+
+{
+  "product_id": 3
+}
+###
+DELETE http://localhost:3000/images/10
