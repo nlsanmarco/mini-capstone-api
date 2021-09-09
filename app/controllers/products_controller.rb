@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
   def index
-    products = Product.all
-    render json: products
+    if current_user
+      products = Product.all
+      render json: products
+    else
+      render json: { message: "you must be logged in to do that." }
+    end
   end
 
   def show
@@ -23,7 +27,7 @@ class ProductsController < ApplicationController
       render json: product
     else
       render json: product.errors.full_messages,
-      status: :unprocessable_entity
+             status: :unprocessable_entity
     end
   end
 
