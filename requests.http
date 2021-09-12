@@ -72,8 +72,8 @@ DELETE http://localhost:3000/images/10
   Content-Type: application/json
 
   {
-    "name": "Minnie",
-    "email": "minnie@gmail.com",
+    "name": "Polly",
+    "email": "polly@gmail.com",
     "password": "password",
     "password_confirmation": "password"
   }
@@ -86,3 +86,24 @@ DELETE http://localhost:3000/images/10
     "password": "password"
   }
 
+### Orders create
+POST http://localhost:3000/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzE1NzcxNDJ9.l6oxhnlPhF3sTQnrJCIBtVtt8WNJmqlpkSor-B4jLaY
+
+{
+ 
+  "product_id": 4,
+  "quantity": 2
+ 
+}
+
+### Orders show
+GET http://localhost:3000/orders/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzE1NzY5ODl9.LWHnaBZJUJfgYsJUF-SLapddRglErEAqQC8rxNfwFBw
+
+### Orders index
+GET http://localhost:3000/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzE1NzY5ODl9.LWHnaBZJUJfgYsJUF-SLapddRglErEAqQC8rxNfwFBw

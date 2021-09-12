@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   # validates_format_of :image, with: %r{\.(png|jpg|jpeg)$}i
 
   belongs_to :supplier
+  has_many :orders
   has_many :images
 
   def is_discounted?
