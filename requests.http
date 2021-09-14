@@ -1,10 +1,13 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzE2NDA5NDh9.6Ujk1BmYTfZKerjRKkFqmN0eFLKFSI7H6JltgUY76XY
+
 GET http://localhost:3000/products
-Authorization: Bearer 
+Authorization: Bearer {{jwt}}
 ###
 GET http://localhost:3000/products/2
 ###
 POST http://localhost:3000/products
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
   "name": "",
@@ -17,9 +20,10 @@ Content-Type: application/json
 ###
 PATCH http://localhost:3000/products/2
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
-  "supplier_id": 
+  "inventory": 3 
 }
 ###
 DELETE http://localhost:3000/products/5
@@ -27,6 +31,7 @@ DELETE http://localhost:3000/products/5
 
 
 GET http://localhost:3000/suppliers
+Authorization: Bearer {{jwt}}
 ###
 GET http://localhost:3000/suppliers/1
 ###
@@ -82,14 +87,14 @@ DELETE http://localhost:3000/images/10
   Content-Type: application/json
 
   {
-    "email": "minnie@gmail.com",
+    "email": "polly@gmail.com",
     "password": "password"
   }
 
 ### Orders create
 POST http://localhost:3000/orders
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzE1NzcxNDJ9.l6oxhnlPhF3sTQnrJCIBtVtt8WNJmqlpkSor-B4jLaY
+Authorization: Bearer {{jwt}}
 
 {
  
@@ -99,11 +104,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzE1NzcxN
 }
 
 ### Orders show
-GET http://localhost:3000/orders/2
+GET http://localhost:3000/orders/3
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzE1NzY5ODl9.LWHnaBZJUJfgYsJUF-SLapddRglErEAqQC8rxNfwFBw
+Authorization: Bearer {{jwt}}
 
 ### Orders index
 GET http://localhost:3000/orders
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzE1NzY5ODl9.LWHnaBZJUJfgYsJUF-SLapddRglErEAqQC8rxNfwFBw
+Authorization: Bearer {{jwt}}
