@@ -1,6 +1,6 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzE2NDA5NDh9.6Ujk1BmYTfZKerjRKkFqmN0eFLKFSI7H6JltgUY76XY
 
-GET http://localhost:3000/products
+GET http://localhost:3000/products?category=Playtime
 Authorization: Bearer {{jwt}}
 ###
 GET http://localhost:3000/products/2

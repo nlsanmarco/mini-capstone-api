@@ -4,6 +4,10 @@ class ProductsController < ApplicationController
   def index
     if current_user
       products = Product.all
+      if params[:category]
+        category = Category.find_by(name: params[:category])
+        products = category.products
+      end
       render json: products
     else
       render json: { message: "you must be logged in to do that." }
