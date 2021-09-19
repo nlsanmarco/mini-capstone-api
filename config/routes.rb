@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post "/products" => "products#create"
   patch "/products/:id" => "products#update"
   delete "/products/:id" => "products#delete"
+
   get "/suppliers" => "suppliers#index"
   get "/suppliers/:id" => "suppliers#show"
   post "/suppliers" => "suppliers#create"
@@ -15,8 +16,11 @@ Rails.application.routes.draw do
   delete "images/:id" => "images#delete"
 
   post "/users" => "users#create"
-
   post "/sessions" => "sessions#create"
+
+  get "/carted_products" => "carted_products#index"
+  post "/carted_products" => "carted_products#create"
+  patch "/carted_products/:id" => "carted_products#update"
 
   get "/orders" => "orders#index"
   post "/orders" => "orders#create"

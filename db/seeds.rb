@@ -39,3 +39,12 @@
 #   { url: "https://cdn11.bigcommerce.com/s-gjzevo/images/stencil/1280x1280/products/431/619/L1-blue-nylon-dog-leash__89173.1625067329.jpg?c=2", product_id: 1 },
 #   { url: "https://s7d5.scene7.com/is/image/PetsUnited/T497491AA?wid=328&hei=328", product_id: 3 },
 # ])
+
+# CartedProduct.create!([
+# { user_id: 2, product_id: 2, quantity: 2, status: "carted" },
+# { user_id: 2, product_id: 3, quantity: 2, status: "carted" },
+# { user_id: 3, product_id: 3, quantity: 1, status: "carted" },
+# { user_id: 2, product_id: 4, quantity: 3, status: "purchased" },
+# { user_id: 3, product_id: 5, quantity: 1, status: "removed" },
+#   { user_id: 2, product_id: 4, quantity: 2, status: "purchased", order_id: 3 },
+# ])

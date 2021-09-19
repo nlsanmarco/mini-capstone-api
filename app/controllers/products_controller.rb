@@ -2,16 +2,12 @@ class ProductsController < ApplicationController
   before_action :authenticate_admin, except: [:index, :show]
 
   def index
-    if current_user
-      products = Product.all
-      if params[:category]
-        category = Category.find_by(name: params[:category])
-        products = category.products
-      end
-      render json: products
-    else
-      render json: { message: "you must be logged in to do that." }
+    products = Product.all
+    if params[:category]
+      category = Category.find_by(name: params[:category])
+      products = category.products
     end
+    render json: products
   end
 
   def show
@@ -27,7 +23,6 @@ class ProductsController < ApplicationController
       inventory: params[:inventory],
       supplier_id: params[:supplier_id],
     )
-    product.save
 
     if product.save
       render json: product
@@ -54,7 +49,7 @@ class ProductsController < ApplicationController
   end
 
   def delete
-    product = Product.find(params[:id])
+    product = Product.find_by(id: params[:id])
     product.destroy
     render json: { message: "Product successfully deleted." }
   end
