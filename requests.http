@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzIwOTY3NDd9.RcGPdE5RggsVCECS-orU1PNWAVcOizF9tLJQDypvREE
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzQ1NjM3Nzl9.OC54iUK_IqA1FlKmVAE6_9Ej_XdWwf5AEKfUTWh21Mw
 
 @hostname = http://localhost:3000
 
@@ -13,23 +13,23 @@ Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-  "name": "",
-  "price": 10000,
-  "description": "water",
+  "name": "Dog Bed",
+  "price": 30,
+  "description": "memory foam dog bed, large",
   "inventory": 1,
   "supplier_id": 2
 }
 
 ### PRODUCTS UPDATE
-PATCH {{hostname}}/products/2
+PATCH {{hostname}}/products/5
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-  "inventory": 3 
+  "supplier_id": 1 
 }
 ### PRODUCTS DESTROY
-DELETE {{hostname}}/products/5
+DELETE {{hostname}}/products/7
 
 ### SUPPLIERS INDEX
 GET {{hostname}}/suppliers
@@ -80,8 +80,8 @@ DELETE {{hostname}}/images/10
   Content-Type: application/json
 
   {
-    "name": "Polly",
-    "email": "polly@gmail.com",
+    "name": "Sabretooth",
+    "email": "sabretooth@gmail.com",
     "password": "password",
     "password_confirmation": "password"
   }
@@ -109,11 +109,11 @@ Authorization: Bearer {{jwt}}
  
   "product_id": 4,
   "quantity": 3
- 
+
 }
 
 ### Carted Products Update/Destroy
-PATCH {{hostname}}/carted_products/2
+PATCH {{hostname}}/carted_products/15
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
@@ -124,7 +124,7 @@ Authorization: Bearer {{jwt}}
 
 
 ### Orders show
-GET {{hostname}}/orders/3
+GET {{hostname}}/orders/8
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 

@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
   def show
     order = Order.find(params[:id])
-    if order.user_id == current_user.index
+    if order.user_id == current_user.id
       render json: order, include: "carted_products.product"
     else
       render json: { message: "That is not your order!" }, status: 401
